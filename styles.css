@@ -21,8 +21,8 @@
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  --container: 1160px;
-  --gutter: 24px;
+  --container: 1320px;
+  --gutter: clamp(24px, 4.5vw, 72px);   /* side space grows gently with the screen */
   --radius: 16px;
   --header-h: 72px;
 }
