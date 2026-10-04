@@ -6,7 +6,7 @@ exists; if a file is missing, the normal desktop photo is used. No code changes 
 
 File name (put it here)                   Shown at          Best size / shape
 ----------------------------------------  ----------------  --------------------------------------
-hero.jpg                                  Home, top banner  Portrait 4:5, e.g. 1200 x 1500 px.
+hero.png                                  Home, top banner  Portrait 4:5, e.g. 1200 x 1500 px.
                                                             Subject in the upper half: the bottom
                                                             ~40% fades into dark teal and the
                                                             header sits over the top ~15%.
