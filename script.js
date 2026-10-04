@@ -106,6 +106,28 @@
     });
   }
 
+  // Mobile photos: <img data-mobile-src="images/mobile/x.jpg"> swaps to a phone-specific photo on small
+  // screens. It only swaps if that file exists, so the desktop photo stays until a mobile one is added.
+  const phoneQuery = window.matchMedia("(max-width: 600px)");
+  const swappable = [...document.querySelectorAll("img[data-mobile-src]")];
+  const applyMobilePhotos = () => {
+    swappable.forEach((img) => {
+      const desktop = img.dataset.desktopSrc || (img.dataset.desktopSrc = img.getAttribute("src"));
+      const mobile = img.dataset.mobileSrc;
+      if (!phoneQuery.matches) { if (img.getAttribute("src") !== desktop) img.src = desktop; return; }
+      if (img.dataset.mobileOk === "1") { img.src = mobile; return; }
+      if (img.dataset.mobileOk === "0") return;
+      const probe = new Image();
+      probe.onload = () => { img.dataset.mobileOk = "1"; if (phoneQuery.matches) img.src = mobile; };
+      probe.onerror = () => { img.dataset.mobileOk = "0"; };
+      probe.src = mobile;
+    });
+  };
+  if (swappable.length) {
+    applyMobilePhotos();
+    phoneQuery.addEventListener("change", applyMobilePhotos);
+  }
+
   // Footer year
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();

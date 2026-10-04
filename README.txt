@@ -17,3 +17,5 @@ Images used by the page (images folder, exact file names):
 
 The top 80px of each screenshot (phone status bar) is cropped with CSS only.
 If the logo images are missing, the page falls back to the SVG shield logo.
+
+Mobile-specific photos: see images/mobile/README.txt (optional; the desktop photo is used until one is added).
