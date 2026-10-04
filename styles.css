@@ -203,12 +203,6 @@ p, blockquote { text-wrap: pretty; }
   transition: transform .2s, border-color .2s;
 }
 .store:hover { transform: translateY(-2px); border-color: #fff; }
-/* Store badges before launch: not clickable, with a note underneath */
-.store.is-soon { cursor: default; }
-.store.is-soon:hover { transform: none; border-color: rgba(255, 255, 255, .35); }
-.download .store.is-soon:hover { border-color: transparent; }
-.soon-note { font-size: 0.85rem; margin-top: 12px; opacity: .9; }
-.download .download-copy > p.soon-note { margin: 12px 0 0; font-size: 0.85rem; color: var(--muted); }
 .store-ico { width: 28px; height: 28px; }
 .store span { display: flex; flex-direction: column; line-height: 1.1; }
 .store small { font-size: 0.6875rem; letter-spacing: .02em; }
