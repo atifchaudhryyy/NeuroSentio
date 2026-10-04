@@ -688,14 +688,22 @@ p, blockquote { text-wrap: pretty; }
   /* Icon grids: two columns instead of one very long list */
   .disc { width: 52px; height: 52px; margin-bottom: 12px; }
   .disc .icon { width: 24px; height: 24px; }
-  .why-grid { grid-template-columns: 1fr 1fr; gap: 28px 14px; }
-  .why-grid li, .why-grid li:first-child, .why-grid li:nth-child(3) { border-left: 0; padding: 0; }
+  .why-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .why-grid li, .why-grid li:first-child, .why-grid li:nth-child(3), .why-grid li:last-child {
+    border: 1px solid #d9ece9; border-radius: 18px; background: #f4fbfa;
+    padding: 20px 12px 18px; text-align: center;
+  }
+  .why-grid .disc { margin-inline: auto; background: #fff; }
+  .why-grid p { margin-inline: auto; }
   .why-grid h3, .values-grid h3, .feature-grid h3 { font-size: 0.98rem; }
-  .why-grid p { max-width: none; font-size: 0.875rem; }
+  .why-grid p { max-width: none; font-size: 0.85rem; line-height: 1.5; }
   .values-grid { grid-template-columns: 1fr 1fr; gap: 28px 8px; }
   .values-grid li, .values-grid li:first-child, .values-grid li:nth-child(3) { border-left: 0; padding: 0 4px; }
   .values-grid p { font-size: 0.85rem; }
 
+  .tools-copy { text-align: center; }
+  .tools-copy h2, .tools-copy .lead { margin-inline: auto; }
+  .tools-copy h2 { max-width: 16ch; }
   .tool-card { padding: 20px 20px 22px; }
   .tool-card h3 { margin: 12px 0 4px; }
 
@@ -765,3 +773,48 @@ p, blockquote { text-wrap: pretty; }
 @media (max-width: 340px) {
   .info-list a { font-size: 0.72rem; letter-spacing: -0.01em; }
 }
+
+/* =========================================================
+   Phones: centre text blocks so every section reads the same way
+   ========================================================= */
+@media (max-width: 600px) {
+  /* Heroes and page intros */
+  .hero-copy, .ph-copy, .contact-intro .container { text-align: center; }
+  .hero-copy .hero-lead, .ph-copy .lead, .contact-intro .lead { margin-inline: auto; }
+  .hero .store-row { max-width: 360px; margin-inline: auto; }
+  .trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 4px; }
+  .trust li { flex-direction: column; text-align: center; gap: 8px; font-size: 0.78rem; }
+  .ph-copy h1 { margin-inline: auto; }
+
+  /* Section copy next to images / cards */
+  .about-copy, .mission-copy, .panel-copy, .approach-copy, .tools-copy { text-align: center; }
+  .about-copy h2, .mission-copy h2, .panel-copy h2, .approach-copy h2, .tools-copy h2,
+  .about-copy > p, .mission-copy > p, .panel-copy > p, .approach-copy .lead, .tools-copy .lead { margin-inline: auto; }
+  .mission-copy h2, .approach-copy h2 { max-width: none; }
+  .spark { display: none; }
+  .values .section-head, .t-head, .t-head header { text-align: center; }
+  .values .lead, .t-head .lead { margin-inline: auto; }
+  .t-head { align-items: center; }
+  .t-controls { justify-content: center; }
+
+  /* Cards: icon above, text centred */
+  .tool-card { text-align: center; }
+  .tool-card .tool-ico { margin-inline: auto; }
+  .mission-card li { flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+  .info-list li { flex-direction: column; text-align: center; gap: 10px; }
+  .contact-card > h2, .follow { text-align: center; }
+  .follow-links { justify-content: center; }
+  .field label { text-align: left; }
+
+  /* Footer */
+  .site-footer { text-align: center; }
+  .footer-brand .brand { align-items: center; }
+  .footer-col h3 { text-align: center; }
+  .mail { justify-content: center; }
+  .socials { justify-content: center; margin-left: 0; }
+  .footer-bottom { align-items: center; text-align: center; }
+}
+
+@media (max-width: 340px) { .trust li { font-size: 0.72rem; } }
+/* Download banner badges: stack when the banner is too narrow for two across */
+@media (max-width: 430px) { .download .store-row { grid-template-columns: 1fr; max-width: 260px; margin-inline: auto; } }
