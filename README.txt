@@ -1,27 +1,29 @@
 NeuroSentio website - images
 ============================
 
-The pages load the optimised copies in images/web/ (small, fast files).
-The large originals stay in images/ as your master copies; the site does not load them.
+Used by the site
+  images/hero.webp                  home hero (desktop)
+  images/mobile/hero.webp           home hero (phones, up to 600px wide)
+  images/about.webp                 home page "About NeuroSentio" photo
+  images/aboutPage.webp             about.html hero photo
+  images/Built for Real Life.webp   features.html "Built for Real Life"
+  images/contact.webp               contact.html details card
+  images/AIAssistant.webp           app screenshot (720x1600)
+  images/EnergyCheckIn.webp         app screenshot (720x1600)
+  images/NeuroCard.jpg              app screenshot (720x1600)
+  images/SafeMode.jpg               app screenshot (720x1600)
+  images/web/mission.jpg            about.html "Our Mission"   (from images/Mission.png)
+  images/web/story.jpg              about.html "Our Story"     (from images/story.png)
+  images/web/app-icon.png           download banner + features hero icon (from images/AppIcon.png)
+  images/web/logo.png               "A Closer Look" shield (from images/logo.png)
+  images/web/app-logo.png           header logo, white wordmark (from images/AppLogo.png)
+  images/web/footer-logo.png        footer logo / white header (from images/FooterLogo.png)
+  images/web/favicon.png            browser-tab icon (64x64)
+  images/web/og-image.jpg           link-preview image (1200x630)
 
-images/web/ (used by the site)
-  hero.jpg        home hero (desktop)            from images/hero.jpg
-  about.jpg       home About + about.html hero   from images/about.png
-  mission.jpg     about.html "Our Mission"       from images/Mission.png
-  story.jpg       about.html "Our Story"         from images/story.png
-  real-life.jpg   features.html "Built for Real Life"  from images/Built for Real Life.png
-  contact.jpg     contact.html details card      from images/contact.png
-  app-icon.png    download banner + features hero icon   from images/AppIcon.png
-  logo.png        "A Closer Look" shield         from images/logo.png
-  app-logo.png    header logo (white wordmark)   from images/AppLogo.png
-  footer-logo.png footer logo / white header     from images/FooterLogo.png
-  favicon.png     browser-tab icon (64x64)       from images/AppIcon.png
-  og-image.jpg    link-preview image (1200x630) for WhatsApp, LinkedIn, X...
+App screenshots: the top 80px (phone status bar) is cropped with CSS, so keep them 720x1600.
 
-images/mobile/
-  hero.webp       phone version of the home hero (used on screens up to 600px)
+Not used by the site (master copies you can keep or delete):
+  about.png, about.jpg, AppIcon.png, AppLogo.png, FooterLogo.png, logo.png, Mission.png, story.png
 
-App screenshots (images/*.jpg, 720x1600) are used as-is; their top 80px status bar is cropped with CSS.
-
-Replacing a photo: export it at about the same pixel size as the file in images/web/,
-keep it under ~250 KB, and save it over that file (same name).
+Replacing a photo: save the new file over the one listed above (same name), ideally WebP under ~150 KB.
