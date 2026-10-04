@@ -1,24 +1,13 @@
 MOBILE PHOTOS
 =============
-Drop phone-specific versions of the photos in THIS folder (images/mobile/), using the SAME file
-names as the desktop photos. On screens 600px wide or less the page uses the file from here if it
-exists; if a file is missing, the normal desktop photo is used. No code changes needed.
+Phone-specific photos live in this folder. They are wired in with a <picture> element, so phones
+download ONLY the mobile file (the desktop photo is not loaded on phones).
 
-File name (put it here)                   Shown at          Best size / shape
-----------------------------------------  ----------------  --------------------------------------
-hero.webp                                 Home, top banner  Portrait 4:5, e.g. 1200 x 1500 px.
-                                                            Subject in the upper half: the bottom
-                                                            ~40% fades into dark teal and the
-                                                            header sits over the top ~15%.
-about.png                                 Home About +      Landscape 5:4, e.g. 1250 x 1000 px
-                                          About page hero
-Mission.png                               About page        5:4, e.g. 1250 x 1000 px
-story.png                                 About page        5:4, e.g. 1250 x 1000 px
-Built for Real Life.png                   Features page     5:4, e.g. 1250 x 1000 px
-contact.png                               Contact page      Wide strip, ~2:1, e.g. 1200 x 600 px
-                                                            (top edge fades into the card)
+In use now
+  hero.webp   home page hero, screens up to 600px wide (portrait 4:5, ~1200 x 1500 px)
 
-Tips
-- Keep each file under ~300 KB (JPG/WebP-quality exports are fine; save as PNG only if needed).
-- Keep the same file extension as the desktop file (hero.jpg stays .jpg, about.png stays .png).
-- Keep faces/products in the middle: phones crop the edges slightly.
+To add another mobile photo (About, Mission, Story, Built for Real Life, Contact):
+put the file here and ask for it to be wired in - it needs a one-line HTML change per photo.
+Best format: WebP, portrait 4:5 or 5:4, under ~150 KB.
+
+hero.png is the original PNG of hero.webp; the site does not use it.

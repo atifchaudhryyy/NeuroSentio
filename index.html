@@ -6,11 +6,16 @@
   <title>NeuroSentio – Calmer workdays, together</title>
   <meta name="description" content="NeuroSentio is an AI-powered app that helps neurodivergent people feel more supported, focused and in control at work." />
   <meta name="theme-color" content="#0a9d94" />
-  <link rel="icon" type="image/png" href="images/AppIcon.png" />
+  <link rel="icon" type="image/png" href="images/web/favicon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NeuroSentio" />
   <meta property="og:title" content="NeuroSentio – Calmer workdays, together" />
   <meta property="og:description" content="NeuroSentio is an AI-powered app that helps neurodivergent people feel more supported, focused and in control at work." />
+  <meta property="og:url" content="https://atifchaudhryyy.github.io/NeuroSentio/" />
+  <meta property="og:image" content="https://atifchaudhryyy.github.io/NeuroSentio/images/web/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,8 +61,8 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="NeuroSentio home">
-        <img class="brand-img brand-img-light" src="images/AppLogo.png" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
-        <img class="brand-img brand-img-dark" src="images/FooterLogo.png" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
+        <img class="brand-img brand-img-light" src="images/web/app-logo.png" width="144" height="48" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
+        <img class="brand-img brand-img-dark" src="images/web/footer-logo.png" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
         <span class="brand-fallback">
           <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
           <span class="brand-name">NeuroSentio</span>
@@ -89,7 +94,10 @@
     <!-- ========== Hero ========== -->
     <section class="hero" id="home">
       <div class="hero-media" aria-hidden="true">
-        <img src="images/hero.jpg" data-mobile-src="images/mobile/hero.webp" alt="" fetchpriority="high" decoding="async" onerror="this.remove()" />
+        <picture>
+          <source media="(max-width: 600px)" srcset="images/mobile/hero.webp" type="image/webp" />
+          <img src="images/web/hero.jpg" alt="" fetchpriority="high" decoding="async" onerror="this.remove()" />
+        </picture>
       </div>
 
       <div class="container hero-inner">
@@ -99,15 +107,16 @@
           <p class="hero-lead">An AI-powered app to help neurodivergent people feel more supported, focused and in control at work.</p>
 
           <div class="store-row">
-            <a class="store" href="#" aria-label="Download on the App Store">
+            <span class="store is-soon" role="img" aria-label="Download on the App Store (coming soon)">
               <svg class="store-ico" aria-hidden="true"><use href="#i-apple"/></svg>
               <span><small>Download on the</small><strong>App Store</strong></span>
-            </a>
-            <a class="store" href="#" aria-label="Get it on Google Play">
+            </span>
+            <span class="store is-soon" role="img" aria-label="Get it on Google Play (coming soon)">
               <svg class="store-ico" aria-hidden="true"><use href="#i-play"/></svg>
               <span><small>GET IT ON</small><strong>Google Play</strong></span>
-            </a>
+            </span>
           </div>
+          <p class="soon-note">Coming soon to iPhone and Android.</p>
         </div>
 
         <ul class="trust">
@@ -189,7 +198,7 @@
           </li>
           <li class="tool-card tone-lilac">
             <svg class="icon tool-ico ico-purple" aria-hidden="true"><use href="#i-bolt"/></svg>
-            <h3>Energy Insights</h3>
+            <h3>Energy Check-in</h3>
             <p>Track your energy, spot patterns, and plan around what works for you.</p>
           </li>
         </ul>
@@ -245,7 +254,7 @@
       <div class="container">
         <div class="panel panel-soft">
           <div class="panel-media panel-media-logo">
-            <img src="images/logo.png" alt="The NeuroSentio shield logo" loading="lazy" onerror="this.remove()" />
+            <img src="images/web/logo.png" alt="The NeuroSentio shield logo" loading="lazy" onerror="this.remove()" />
           </div>
           <div class="panel-copy">
             <p class="eyebrow">A Closer Look</p>
@@ -261,7 +270,7 @@
     <section class="section about" id="about">
       <div class="container about-grid">
         <div class="about-media">
-          <img src="images/about.png" data-mobile-src="images/mobile/about.png" alt="A smiling person working at a laptop in a bright, plant-filled space" onerror="this.remove()" />
+          <img src="images/web/about.jpg" alt="A smiling person working at a laptop in a bright, plant-filled space" onerror="this.remove()" />
         </div>
         <div class="about-copy">
           <p class="eyebrow eyebrow-muted">About NeuroSentio</p>
@@ -269,41 +278,6 @@
           <p>We believe neurodivergent people deserve workplaces that understand and support them. NeuroSentio was created to make everyday work life calmer and more inclusive, with practical tools for planning, communication, energy awareness and moments of overwhelm.</p>
           <a class="btn btn-outline" href="about.html#mission">Learn more about our mission <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-      </div>
-    </section>
-
-    <!-- ========== Mission (purpose / approach / who it's for) ========== -->
-    <section class="section mission" aria-labelledby="missionTitle">
-      <div class="container mission-grid">
-        <div class="mission-copy">
-          <p class="eyebrow eyebrow-muted">Our mission</p>
-          <h2 id="missionTitle">Tools that respect how you think.</h2>
-          <p>NeuroSentio exists to make everyday work and life more accessible for neurodivergent people. We believe that everyone deserves tools that respect different ways of thinking, communicating and functioning — not force a one-size-fits-all approach.</p>
-        </div>
-
-        <ul class="mission-card">
-          <li>
-            <span class="mission-ico"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
-            <div>
-              <h3>Our Purpose</h3>
-              <p>To create practical, respectful tools that support neurodivergent individuals in their daily lives.</p>
-            </div>
-          </li>
-          <li>
-            <span class="mission-ico"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></span>
-            <div>
-              <h3>Our Approach</h3>
-              <p>Calm design, user control and features grounded in real needs.</p>
-            </div>
-          </li>
-          <li>
-            <span class="mission-ico"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
-            <div>
-              <h3>Who It’s For</h3>
-              <p>Neurodivergent individuals, workplaces, educators and anyone who wants a more inclusive and supportive environment.</p>
-            </div>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -357,19 +331,20 @@
             <h2>Download NeuroSentio</h2>
             <p>Take control of your day with practical tools designed for neurodivergent lives.</p>
             <div class="store-row">
-              <a class="store" href="#" aria-label="Download on the App Store">
+              <span class="store is-soon" role="img" aria-label="Download on the App Store (coming soon)">
                 <svg class="store-ico" aria-hidden="true"><use href="#i-apple"/></svg>
                 <span><small>Download on the</small><strong>App Store</strong></span>
-              </a>
-              <a class="store" href="#" aria-label="Get it on Google Play">
+              </span>
+              <span class="store is-soon" role="img" aria-label="Get it on Google Play (coming soon)">
                 <svg class="store-ico" aria-hidden="true"><use href="#i-play"/></svg>
                 <span><small>GET IT ON</small><strong>Google Play</strong></span>
-              </a>
+              </span>
             </div>
+            <p class="soon-note">Coming soon to iPhone and Android.</p>
           </div>
 
           <span class="app-icon">
-            <img src="images/AppIcon.png" alt="NeuroSentio app icon" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" />
+            <img src="images/web/app-icon.png" alt="NeuroSentio app icon" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" />
             <svg aria-hidden="true"><use href="#i-logo"/></svg>
           </span>
         </div>
@@ -383,7 +358,7 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="brand brand-dark" href="#home" aria-label="NeuroSentio home">
-          <img class="brand-img" src="images/FooterLogo.png" alt="" loading="lazy" onerror="this.closest('.brand').classList.add('no-img')" />
+          <img class="brand-img" src="images/web/footer-logo.png" alt="" loading="lazy" onerror="this.closest('.brand').classList.add('no-img')" />
           <span class="brand-fallback">
             <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
             <span class="brand-name">NeuroSentio</span>
