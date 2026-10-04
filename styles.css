@@ -509,6 +509,8 @@ p, blockquote { text-wrap: pretty; }
 .select-wrap .icon { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
 .field-error { color: #b3261e; font-size: 0.8125rem; margin-top: 6px; }
 .field-error[hidden], .form-status[hidden] { display: none; }
+.form-status.is-error { color: #8a1c14; background: #fdecea; }
+.form-status a { text-decoration: underline; font-weight: 600; }
 .contact-form .btn { justify-self: start; margin-top: 6px; }
 .form-status { font-size: 0.9rem; color: var(--teal-dark); background: var(--mint); border-radius: 12px; padding: 12px 16px; }
 

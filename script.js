@@ -72,14 +72,14 @@
     updateArrows();
   }
 
-  // Contact form (contact page only).
-  // The site is static, so a valid form opens the visitor's email app with the message filled in.
-  // Swap the submit handler for a fetch() to a form service (Formspree, Netlify Forms, ...) to send directly.
+  // Contact form (contact page only): sends through FormSubmit (formsubmit.co), which emails the message
+  // to the address in the form's data-inbox attribute. Falls back to the visitor's mail app if sending fails.
   const form = document.getElementById("contactForm");
   if (form) {
     const status = document.getElementById("formStatus");
-    const to = form.getAttribute("action").replace("mailto:", "");
-    const fields = [...form.querySelectorAll("input, select, textarea")];
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const inbox = form.dataset.inbox;
+    const fields = [...form.querySelectorAll("input:not([type=hidden]), select, textarea")];
     const errorFor = (el) => document.getElementById(el.getAttribute("aria-describedby"));
     const check = (el) => {
       const bad = !el.checkValidity();
@@ -87,22 +87,45 @@
       errorFor(el).hidden = !bad;
       return !bad;
     };
+    const show = (msg, ok) => {
+      status.textContent = msg;
+      status.classList.toggle("is-error", !ok);
+      status.hidden = false;
+    };
     fields.forEach((el) => el.addEventListener("input", () => { if (el.getAttribute("aria-invalid") === "true") check(el); }));
     fields.forEach((el) => el.addEventListener("change", () => { if (el.getAttribute("aria-invalid") === "true") check(el); }));
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       status.hidden = true;
       const firstBad = fields.filter((el) => !check(el))[0];
       if (firstBad) { firstBad.focus(); return; }
+      if (form.elements["_honey"] && form.elements["_honey"].value) return; // spam bot filled the hidden field
 
       const data = new FormData(form);
-      const subject = `[NeuroSentio] ${data.get("subject")} – ${data.get("name")}`;
-      const body = `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`;
-      window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      status.textContent = `Thanks! Your email app should open with your message ready to send. If it doesn't, write to us at ${to}.`;
-      status.hidden = false;
+      submitBtn.disabled = true;
+      const label = submitBtn.firstChild.textContent;
+      submitBtn.firstChild.textContent = "Sending… ";
+      try {
+        const res = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(inbox), {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: data,
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || out.success === "false" || out.success === false) throw new Error(out.message || "send failed");
+        form.reset();
+        fields.forEach((el) => el.removeAttribute("aria-invalid"));
+        show("Thank you! Your message has been sent. We’ll get back to you as soon as possible.", true);
+      } catch (err) {
+        const subject = `[NeuroSentio] ${data.get("subject")} – ${data.get("name")}`;
+        const body = `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`;
+        show(`Sorry, we couldn’t send that just now. Please email us at ${inbox} or try again.`, false);
+        status.insertAdjacentHTML("beforeend", ` <a href="mailto:${inbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">Open in your email app</a>`);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.firstChild.textContent = label;
+      }
     });
   }
 

@@ -110,7 +110,11 @@
         <div class="contact-card contact-form-card">
           <h2>Send us a message</h2>
 
-          <form class="contact-form" id="contactForm" action="mailto:connect.neurosentio@gmail.com" method="post" enctype="text/plain" novalidate>
+          <form class="contact-form" id="contactForm" data-inbox="contact.neurosentio@gmail.com" action="https://formsubmit.co/contact.neurosentio@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New message from the NeuroSentio website" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
             <div class="field">
               <label for="cName">Full Name <span aria-hidden="true">*</span></label>
               <input id="cName" aria-describedby="cNameErr" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required />
@@ -158,7 +162,7 @@
               <span class="info-ico"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
               <div>
                 <h3>Email</h3>
-                <a href="mailto:connect.neurosentio@gmail.com">connect.neurosentio@gmail.com</a>
+                <a href="mailto:contact.neurosentio@gmail.com">contact.neurosentio@gmail.com</a>
               </div>
             </li>
             <li>
@@ -230,9 +234,9 @@
 
       <div class="footer-col">
         <h3>Get in Touch</h3>
-        <a class="mail" href="mailto:connect.neurosentio@gmail.com">
+        <a class="mail" href="mailto:contact.neurosentio@gmail.com">
           <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
-          connect.neurosentio@gmail.com
+          contact.neurosentio@gmail.com
         </a>
         <div class="socials">
           <a class="social-link" href="https://www.linkedin.com/company/neurosentio-ltd/" target="_blank" rel="noopener" aria-label="NeuroSentio on LinkedIn (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
