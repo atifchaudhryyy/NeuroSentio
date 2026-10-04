@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuroSentio – Calmer workdays, together</title>
+  <meta name="description" content="NeuroSentio is an AI-powered app that helps neurodivergent people feel more supported, focused and in control at work." />
+  <meta name="theme-color" content="#0a9d94" />
+  <link rel="icon" type="image/png" href="images/AppIcon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NeuroSentio" />
+  <meta property="og:title" content="NeuroSentio – Calmer workdays, together" />
+  <meta property="og:description" content="NeuroSentio is an AI-powered app that helps neurodivergent people feel more supported, focused and in control at work." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+
+  <!-- ========== Icon sprite ========== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><rect x="4" y="12" width="4" height="8" rx="1"/><rect x="10" y="4" width="4" height="16" rx="1"/><rect x="16" y="9" width="4" height="11" rx="1"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.2 7.6L3.5 20.5l1.4-4.9A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2c0 4.8-3.2 8.4-7.5 9.8-4.3-1.4-7.5-5-7.5-9.8V6L12 3z"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18M7 15h5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.5 10.5 5 20 5c0 9.5-5.5 15-14 15"/><path d="M5 19c2.5-4.5 5.5-7.5 10-10"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15.5v1.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.5 2.6c0 5.7-7.5 10.3-7.5 10.3z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.2c2.6.2 4.5 2 4.5 4.8"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01" stroke-width="2.4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.15 6.9c-.95 0-2.42-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.03-3.04 2.48-4.49 2.6-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.68 1.09-4.61 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.45 2.34-1.27 3.71 1.34.1 2.72-.69 3.55-1.7z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path fill="#00c3ff" stroke="none" d="M3.6 2.2 13.4 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z"/>
+      <path fill="#00e676" stroke="none" d="M13.4 12 16.7 8.7 5 2c-.5-.2-1-.1-1.4.2z"/>
+      <path fill="#ff3d57" stroke="none" d="M13.4 12 16.7 15.3 5 22c-.5.2-1 .1-1.4-.2z"/>
+      <path fill="#ffc400" stroke="none" d="M16.7 8.7 20.5 10.9c.7.4.7 1.8 0 2.2l-3.8 2.2L13.4 12z"/>
+    </symbol>
+    <symbol id="i-logo" viewBox="0 0 40 44">
+      <path d="M20 2 36 8v12c0 11-7 19.5-16 22C11 39.500 4 31 4 20V8L20 2z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M13 17c2-4 8-5 10-1.500s-2 6-5 5-3 4 1 5.500 8-.5 8-5M16.500 14.500c1.500-1 3.500-.5 4 1M12 24c1.500 3 5 4.500 8 4" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="NeuroSentio home">
+        <img class="brand-img brand-img-light" src="images/AppLogo.png" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
+        <img class="brand-img brand-img-dark" src="images/FooterLogo.png" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
+        <span class="brand-fallback">
+          <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+          <span class="brand-name">NeuroSentio</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <ul>
+          <li><a href="#home" class="is-active">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn-solid btn-sm nav-cta-mobile" href="#download">Download App</a>
+      </nav>
+
+      <a class="btn btn-solid btn-sm header-cta" href="#download">
+        Download App <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== Hero ========== -->
+    <section class="hero" id="home">
+      <div class="hero-media" aria-hidden="true">
+        <img src="images/hero.jpg" alt="" fetchpriority="high" decoding="async" onerror="this.remove()" />
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow eyebrow-light">A calmer workday is possible</p>
+          <h1>Discover NeuroSentio</h1>
+          <p class="hero-lead">An AI-powered app to help neurodivergent people feel more supported, focused and in control at work.</p>
+
+          <div class="store-row">
+            <a class="store" href="#" aria-label="Download on the App Store">
+              <svg class="store-ico" aria-hidden="true"><use href="#i-apple"/></svg>
+              <span><small>Download on the</small><strong>App Store</strong></span>
+            </a>
+            <a class="store" href="#" aria-label="Get it on Google Play">
+              <svg class="store-ico" aria-hidden="true"><use href="#i-play"/></svg>
+              <span><small>GET IT ON</small><strong>Google Play</strong></span>
+            </a>
+          </div>
+        </div>
+
+        <ul class="trust">
+          <li>
+            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></span>
+            <span>Designed for<br />neurodivergent minds</span>
+          </li>
+          <li>
+            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
+            <span>Private, secure<br />and in your control</span>
+          </li>
+          <li>
+            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <span>Real support<br />for real workdays</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== Why NeuroSentio ========== -->
+    <section class="section why">
+      <div class="container">
+        <header class="section-head center">
+          <p class="eyebrow">Why NeuroSentio</p>
+          <h2>Workplace support that fits your brain.</h2>
+          <p class="lead">NeuroSentio turns daily workplace challenges into simple, supportive tools so you can work in a way that feels better, calmer and more you.</p>
+        </header>
+
+        <ul class="why-grid">
+          <li>
+            <span class="disc"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></span>
+            <h3>Plan with clarity</h3>
+            <p>Turn big days into small, manageable steps.</p>
+          </li>
+          <li>
+            <span class="disc"><svg class="icon" aria-hidden="true"><use href="#i-bars"/></svg></span>
+            <h3>Understand your energy</h3>
+            <p>Track patterns and find what works for you.</p>
+          </li>
+          <li>
+            <span class="disc"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+            <h3>Communicate your needs</h3>
+            <p>Use Neuro Cards to express your preferences.</p>
+          </li>
+          <li>
+            <span class="disc"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Feel safer</h3>
+            <p>Access Safe Mode and trusted contact support.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== Practical tools ========== -->
+    <section class="section tools">
+      <div class="container tools-grid">
+        <div class="tools-copy">
+          <p class="eyebrow eyebrow-muted">Everything in one place</p>
+          <h2>Practical tools for a calmer, more manageable day.</h2>
+          <p class="lead">From planning your day to communicating your needs, NeuroSentio brings together simple, supportive tools in one place.</p>
+          <a class="btn btn-solid btn-lg" href="features.html">Explore Features <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <ul class="tool-cards">
+          <li class="tool-card tone-peach">
+            <svg class="icon tool-ico ico-orange" aria-hidden="true"><use href="#i-sun"/></svg>
+            <h3>Plan My Day</h3>
+            <p>Create realistic plans and break tasks into small, clear steps.</p>
+          </li>
+          <li class="tool-card tone-mint">
+            <svg class="icon tool-ico ico-teal" aria-hidden="true"><use href="#i-chat"/></svg>
+            <h3>AI Assistant</h3>
+            <p>Get gentle, personalised support whenever you feel stuck.</p>
+          </li>
+          <li class="tool-card tone-sky">
+            <svg class="icon tool-ico ico-blue" aria-hidden="true"><use href="#i-card"/></svg>
+            <h3>Neuro Cards</h3>
+            <p>Share your communication preferences with others easily.</p>
+          </li>
+          <li class="tool-card tone-lilac">
+            <svg class="icon tool-ico ico-purple" aria-hidden="true"><use href="#i-bolt"/></svg>
+            <h3>Energy Insights</h3>
+            <p>Track your energy, spot patterns, and plan around what works for you.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== Core features (phones) ========== -->
+    <section class="section core" id="features">
+      <div class="container">
+        <header class="section-head center">
+          <p class="eyebrow">Core features</p>
+          <h2>Simple tools for real workplace challenges.</h2>
+        </header>
+
+        <ul class="phone-grid">
+          <li class="phone-item">
+            <div class="phone">
+              <img src="images/AIAssistant.jpg" alt="NeuroSentio AI Assistant screen with options to plan your day, break down a task, help you reply and understand your patterns" loading="lazy" />
+            </div>
+            <h3>AI Assistant</h3>
+            <p>Get personalised, practical support for everyday work challenges.</p>
+          </li>
+
+          <li class="phone-item">
+            <div class="phone">
+              <img src="images/EnergyCheckIn.jpg" alt="NeuroSentio Energy Check-in screen showing a battery you drag to match your current energy level" loading="lazy" />
+            </div>
+            <h3>Energy Check-in</h3>
+            <p>Tune into your energy and make more realistic plans for your day.</p>
+          </li>
+
+          <li class="phone-item">
+            <div class="phone">
+              <img src="images/NeuroCard.jpg" alt="NeuroSentio Edit Neuro Cards screen where you choose cards that describe your communication preferences" loading="lazy" />
+            </div>
+            <h3>Neuro Cards</h3>
+            <p>Communicate your needs clearly and comfortably at work.</p>
+          </li>
+
+          <li class="phone-item">
+            <div class="phone">
+              <img src="images/SafeMode.jpg" alt="NeuroSentio Safe Mode screen with a large button you hold to enter Safe Mode" loading="lazy" />
+            </div>
+            <h3>Safe Mode</h3>
+            <p>A quick way to reset when things feel overwhelming.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== A closer look ========== -->
+    <section class="section tight closer" aria-labelledby="closerTitle">
+      <div class="container">
+        <div class="panel panel-soft">
+          <div class="panel-media panel-media-logo">
+            <img src="images/logo.png" alt="The NeuroSentio shield logo" loading="lazy" onerror="this.remove()" />
+          </div>
+          <div class="panel-copy">
+            <p class="eyebrow">A Closer Look</p>
+            <h2 id="closerTitle">Everything you need in one place.</h2>
+            <p>NeuroSentio combines planning, tracking, guidance, and AI support — all in a clean, easy-to-use interface designed with neurodivergent individuals in mind.</p>
+            <a class="btn btn-solid btn-sm" href="features.html">See the App in Action <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== About ========== -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-media">
+          <img src="images/about.png" alt="A smiling person working at a laptop in a bright, plant-filled space" onerror="this.remove()" />
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow eyebrow-muted">About NeuroSentio</p>
+          <h2>A more inclusive tomorrow.</h2>
+          <p>We believe neurodivergent people deserve workplaces that understand and support them. NeuroSentio was created to make everyday work life calmer and more inclusive, with practical tools for planning, communication, energy awareness and moments of overwhelm.</p>
+          <a class="btn btn-outline" href="about.html#mission">Learn more about our mission <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Mission (purpose / approach / who it's for) ========== -->
+    <section class="section mission" aria-labelledby="missionTitle">
+      <div class="container mission-grid">
+        <div class="mission-copy">
+          <p class="eyebrow eyebrow-muted">Our mission</p>
+          <h2 id="missionTitle">Tools that respect how you think.</h2>
+          <p>NeuroSentio exists to make everyday work and life more accessible for neurodivergent people. We believe that everyone deserves tools that respect different ways of thinking, communicating and functioning — not force a one-size-fits-all approach.</p>
+        </div>
+
+        <ul class="mission-card">
+          <li>
+            <span class="mission-ico"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <div>
+              <h3>Our Purpose</h3>
+              <p>To create practical, respectful tools that support neurodivergent individuals in their daily lives.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mission-ico"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></span>
+            <div>
+              <h3>Our Approach</h3>
+              <p>Calm design, user control and features grounded in real needs.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mission-ico"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+            <div>
+              <h3>Who It’s For</h3>
+              <p>Neurodivergent individuals, workplaces, educators and anyone who wants a more inclusive and supportive environment.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== Testimonials ========== -->
+    <section class="section testimonials" aria-labelledby="tTitle">
+      <div class="container">
+        <div class="t-head">
+          <header>
+            <p class="eyebrow eyebrow-muted">Real experiences</p>
+            <h2 id="tTitle">What users are saying.</h2>
+            <p class="lead">Feedback from our tester community and early users.</p>
+          </header>
+          <div class="t-controls">
+            <button class="round-btn" id="tPrev" type="button" aria-label="Previous testimonials"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button>
+            <button class="round-btn" id="tNext" type="button" aria-label="Next testimonials"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
+          </div>
+        </div>
+
+        <ul class="t-track" id="tTrack">
+          <li class="t-card">
+            <blockquote>
+              <span class="qmark" aria-hidden="true">“</span>
+              <p>NeuroSentio has genuinely made my workdays calmer. The planning tools and energy tracking help me stay in control without feeling overwhelmed.</p>
+              <footer>— Tester User</footer>
+            </blockquote>
+          </li>
+          <li class="t-card">
+            <blockquote>
+              <span class="qmark" aria-hidden="true">“</span>
+              <p>The Neuro Cards feature is brilliant. I can communicate my needs easily without having to explain everything every time.</p>
+              <footer>— Early Access User</footer>
+            </blockquote>
+          </li>
+          <li class="t-card">
+            <blockquote>
+              <span class="qmark" aria-hidden="true">“</span>
+              <p>The AI Assistant gives such thoughtful, manageable suggestions. It feels like a supportive tool built with real understanding.</p>
+              <footer>— Beta Tester</footer>
+            </blockquote>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== Download banner ========== -->
+    <section class="download" id="download">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-copy">
+            <p class="eyebrow">Get started today</p>
+            <h2>Download NeuroSentio</h2>
+            <p>Take control of your day with practical tools designed for neurodivergent lives.</p>
+            <div class="store-row">
+              <a class="store" href="#" aria-label="Download on the App Store">
+                <svg class="store-ico" aria-hidden="true"><use href="#i-apple"/></svg>
+                <span><small>Download on the</small><strong>App Store</strong></span>
+              </a>
+              <a class="store" href="#" aria-label="Get it on Google Play">
+                <svg class="store-ico" aria-hidden="true"><use href="#i-play"/></svg>
+                <span><small>GET IT ON</small><strong>Google Play</strong></span>
+              </a>
+            </div>
+          </div>
+
+          <span class="app-icon">
+            <img src="images/AppIcon.png" alt="NeuroSentio app icon" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" />
+            <svg aria-hidden="true"><use href="#i-logo"/></svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-dark" href="#home" aria-label="NeuroSentio home">
+          <img class="brand-img" src="images/FooterLogo.png" alt="" loading="lazy" onerror="this.closest('.brand').classList.add('no-img')" />
+          <span class="brand-fallback">
+            <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+            <span class="brand-name">NeuroSentio</span>
+          </span>
+          <small>Tools for a calmer, more inclusive world.</small>
+        </a>
+      </div>
+
+      <nav class="footer-col" aria-label="Quick links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <a class="mail" href="mailto:connect.neurosentio@gmail.com">
+          <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+          connect.neurosentio@gmail.com
+        </a>
+        <div class="socials">
+          <a href="#" aria-label="NeuroSentio on X"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a>
+          <a href="#" aria-label="NeuroSentio on LinkedIn" class="in">in</a>
+          <a href="#" aria-label="NeuroSentio on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> NeuroSentio. All rights reserved.</p>    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

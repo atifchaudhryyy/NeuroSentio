@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact NeuroSentio – Let’s stay in touch</title>
+  <meta name="description" content="Have a question, feedback, or collaboration idea? Get in touch with the NeuroSentio team." />
+  <meta name="theme-color" content="#0a9d94" />
+  <link rel="icon" type="image/png" href="images/AppIcon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NeuroSentio" />
+  <meta property="og:title" content="Contact NeuroSentio – Let’s stay in touch" />
+  <meta property="og:description" content="Have a question, feedback, or collaboration idea? Get in touch with the NeuroSentio team." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="contact">
+
+  <!-- ========== Icon sprite ========== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><rect x="4" y="12" width="4" height="8" rx="1"/><rect x="10" y="4" width="4" height="16" rx="1"/><rect x="16" y="9" width="4" height="11" rx="1"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.2 7.6L3.5 20.5l1.4-4.9A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2c0 4.8-3.2 8.4-7.5 9.8-4.3-1.4-7.5-5-7.5-9.8V6L12 3z"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18M7 15h5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.5 10.5 5 20 5c0 9.5-5.5 15-14 15"/><path d="M5 19c2.5-4.5 5.5-7.5 10-10"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15.5v1.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.5 2.6c0 5.7-7.5 10.3-7.5 10.3z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.2c2.6.2 4.5 2 4.5 4.8"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01" stroke-width="2.4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.15 6.9c-.95 0-2.42-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.03-3.04 2.48-4.49 2.6-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.68 1.09-4.61 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.45 2.34-1.27 3.71 1.34.1 2.72-.69 3.55-1.7z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path fill="#00c3ff" stroke="none" d="M3.6 2.2 13.4 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z"/>
+      <path fill="#00e676" stroke="none" d="M13.4 12 16.7 8.7 5 2c-.5-.2-1-.1-1.4.2z"/>
+      <path fill="#ff3d57" stroke="none" d="M13.4 12 16.7 15.3 5 22c-.5.2-1 .1-1.4-.2z"/>
+      <path fill="#ffc400" stroke="none" d="M16.7 8.7 20.5 10.9c.7.4.7 1.8 0 2.2l-3.8 2.2L13.4 12z"/>
+    </symbol>
+    <symbol id="i-logo" viewBox="0 0 40 44">
+      <path d="M20 2 36 8v12c0 11-7 19.5-16 22C11 39.500 4 31 4 20V8L20 2z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M13 17c2-4 8-5 10-1.500s-2 6-5 5-3 4 1 5.500 8-.5 8-5M16.500 14.500c1.500-1 3.500-.5 4 1M12 24c1.500 3 5 4.500 8 4" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.500-5.600-6.500-11a6.500 6.500 0 0 1 13 0c0 5.400-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.400"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.9-3.9a3 3 0 0 0-4.2 0l-.9.9a1 1 0 1 1-3-3l2.8-2.8a5.800 5.800 0 0 1 7-.9l.5.3a2 2 0 0 0 1.400.2L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.500 6.500a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ========== Header (solid from the start: this page has no full-bleed hero) ========== -->
+  <header class="site-header is-scrolled" id="top" data-solid>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="NeuroSentio home">
+        <img class="brand-img brand-img-light" src="images/AppLogo.png" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
+        <img class="brand-img brand-img-dark" src="images/FooterLogo.png" alt="" onerror="this.closest('.brand').classList.add('no-img')" />
+        <span class="brand-fallback">
+          <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+          <span class="brand-name">NeuroSentio</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="is-active" aria-current="page">Contact</a></li>
+        </ul>
+        <a class="btn btn-solid btn-sm nav-cta-mobile" href="index.html#download">Download App</a>
+      </nav>
+
+      <a class="btn btn-solid btn-sm header-cta" href="index.html#download">
+        Download App <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== Contact intro ========== -->
+    <section class="contact-intro" aria-labelledby="contactTitle">
+      <div class="container">
+        <p class="eyebrow">Contact Us</p>
+        <h1 id="contactTitle">Let’s stay<br />in touch.</h1>
+        <p class="lead">Have a question, feedback, or collaboration idea? We’d love to hear from you. Our team will get back to you as soon as possible.</p>
+      </div>
+    </section>
+
+    <!-- ========== Form + contact details ========== -->
+    <section class="contact-main" aria-label="Send a message and contact details">
+      <div class="container contact-grid">
+
+        <div class="contact-card contact-form-card">
+          <h2>Send us a message</h2>
+
+          <form class="contact-form" id="contactForm" action="mailto:connect.neurosentio@gmail.com" method="post" enctype="text/plain" novalidate>
+            <div class="field">
+              <label for="cName">Full Name <span aria-hidden="true">*</span></label>
+              <input id="cName" aria-describedby="cNameErr" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required />
+              <p class="field-error" id="cNameErr" hidden>Please enter your name.</p>
+            </div>
+
+            <div class="field">
+              <label for="cEmail">Email Address <span aria-hidden="true">*</span></label>
+              <input id="cEmail" aria-describedby="cEmailErr" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required />
+              <p class="field-error" id="cEmailErr" hidden>Please enter a valid email address.</p>
+            </div>
+
+            <div class="field">
+              <label for="cSubject">Subject <span aria-hidden="true">*</span></label>
+              <div class="select-wrap">
+                <select id="cSubject" aria-describedby="cSubjectErr" name="subject" required>
+                  <option value="" selected disabled>Select a subject</option>
+                  <option>General inquiry</option>
+                  <option>Feedback</option>
+                  <option>Partnership</option>
+                  <option>Support</option>
+                  <option>Other</option>
+                </select>
+                <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>
+              </div>
+              <p class="field-error" id="cSubjectErr" hidden>Please choose a subject.</p>
+            </div>
+
+            <div class="field">
+              <label for="cMessage">Message <span aria-hidden="true">*</span></label>
+              <textarea id="cMessage" aria-describedby="cMessageErr" name="message" rows="6" placeholder="Type your message here…" required></textarea>
+              <p class="field-error" id="cMessageErr" hidden>Please write a message.</p>
+            </div>
+
+            <button class="btn btn-solid btn-lg" type="submit">Send Message <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+
+        <aside class="contact-card contact-info-card" aria-labelledby="infoTitle">
+          <h2 id="infoTitle">Contact Information</h2>
+
+          <ul class="info-list">
+            <li>
+              <span class="info-ico"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+              <div>
+                <h3>Email</h3>
+                <a href="mailto:connect.neurosentio@gmail.com">connect.neurosentio@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="info-ico"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <div>
+                <h3>Location</h3>
+                <p>Islamabad, Pakistan</p>
+              </div>
+            </li>
+            <li>
+              <span class="info-ico"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+              <div>
+                <h3>General Inquiries</h3>
+                <a href="mailto:connect.neurosentio@gmail.com">connect.neurosentio@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="info-ico"><svg class="icon" aria-hidden="true"><use href="#i-handshake"/></svg></span>
+              <div>
+                <h3>Partnerships</h3>
+                <a href="mailto:partnerships@neurosentio.com">partnerships@neurosentio.com</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="follow">
+            <h3>Follow Us</h3>
+            <div class="follow-links">
+              <a href="#" aria-label="NeuroSentio on X"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a>
+              <a href="#" aria-label="NeuroSentio on LinkedIn" class="in">in</a>
+              <a href="#" aria-label="NeuroSentio on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            </div>
+          </div>
+
+          <div class="info-media">
+            <!-- IMAGE: images/contact.png (laptop with the NeuroSentio logo on a bright desk, ~4:3, bright/white top so it fades into the card) -->
+            <img src="images/contact.png" alt="A laptop with the NeuroSentio logo on a bright desk next to a plant" loading="lazy" onerror="this.remove()" />
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-dark" href="index.html" aria-label="NeuroSentio home">
+          <img class="brand-img" src="images/FooterLogo.png" alt="" loading="lazy" onerror="this.closest('.brand').classList.add('no-img')" />
+          <span class="brand-fallback">
+            <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+            <span class="brand-name">NeuroSentio</span>
+          </span>
+          <small>Tools for a calmer, more inclusive world.</small>
+        </a>
+      </div>
+
+      <nav class="footer-col" aria-label="Quick links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <a class="mail" href="mailto:connect.neurosentio@gmail.com">
+          <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+          connect.neurosentio@gmail.com
+        </a>
+        <div class="socials">
+          <a href="#" aria-label="NeuroSentio on X"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a>
+          <a href="#" aria-label="NeuroSentio on LinkedIn" class="in">in</a>
+          <a href="#" aria-label="NeuroSentio on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> NeuroSentio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
