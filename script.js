@@ -55,9 +55,12 @@
       const card = track.querySelector(".t-card");
       return card ? card.getBoundingClientRect().width + 20 : 320;
     };
-    const go = (dir) =>
-      track.scrollBy({ left: dir * step(), behavior: reduceMotion.matches ? "auto" : "smooth" });
     const controls = document.querySelector(".t-controls");
+    const go = (dir) => {
+      track.scrollBy({ left: dir * step(), behavior: reduceMotion.matches ? "auto" : "smooth" });
+      // Re-check the arrows once the scroll has settled, in case a browser skips the final scroll event
+      setTimeout(updateArrows, 450);
+    };
     const updateArrows = () => {
       const max = track.scrollWidth - track.clientWidth;
       // Nothing to scroll (all cards fit): hide the arrows instead of showing two dead buttons
@@ -68,6 +71,7 @@
     prev.addEventListener("click", () => go(-1));
     next.addEventListener("click", () => go(1));
     track.addEventListener("scroll", updateArrows, { passive: true });
+    track.addEventListener("scrollend", updateArrows);
     window.addEventListener("resize", updateArrows);
     updateArrows();
   }
@@ -79,12 +83,14 @@
     const status = document.getElementById("formStatus");
     const submitBtn = form.querySelector('button[type="submit"]');
     const inbox = form.dataset.inbox;
-    const fields = [...form.querySelectorAll("input:not([type=hidden]), select, textarea")];
+    // Only the visible fields (the hidden "_honey" spam trap has no error message and is checked separately)
+    const fields = [...form.querySelectorAll("input:not([type=hidden]):not([name=_honey]), select, textarea")];
     const errorFor = (el) => document.getElementById(el.getAttribute("aria-describedby"));
     const check = (el) => {
       const bad = !el.checkValidity();
       el.setAttribute("aria-invalid", String(bad));
-      errorFor(el).hidden = !bad;
+      const err = errorFor(el);
+      if (err) err.hidden = !bad;
       return !bad;
     };
     const show = (msg, ok) => {
