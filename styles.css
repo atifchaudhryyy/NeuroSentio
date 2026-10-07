@@ -245,18 +245,20 @@ p, blockquote { text-wrap: pretty; }
 .tools-copy .lead { margin-bottom: 30px; max-width: 40ch; }
 
 .tool-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.tool-card { padding: 26px 24px 28px; border-radius: var(--radius); border: 1px solid rgba(20, 50, 58, .05); }
+.tool-card {
+  padding: 26px 24px 28px; border-radius: var(--radius);
+  background: #fff; border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(20, 50, 58, .04);
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.tool-card:hover { border-color: #bfe3dd; box-shadow: 0 16px 32px -22px rgba(11, 74, 80, .4); transform: translateY(-2px); }
 .tool-card h3 { margin: 16px 0 6px; }
 .tool-card p { font-size: 0.875rem; color: var(--muted); }
-.tool-ico { width: 30px; height: 30px; }
-.tone-peach { background: var(--peach); }
-.tone-mint  { background: var(--mint); }
-.tone-sky   { background: var(--sky); }
-.tone-lilac { background: var(--lilac); }
-.ico-orange { color: #f4a23b; }
-.ico-teal   { color: var(--teal); }
-.ico-blue   { color: #3a6fd8; }
-.ico-purple { color: #7a4bd8; }
+/* One calm brand style for every card icon: teal on a mint tile */
+.tool-ico {
+  width: 48px; height: 48px; padding: 12px; border-radius: 14px;
+  background: var(--mint); color: var(--teal-dark); stroke-width: 1.8;
+}
 
 /* ---------- Core features / phones ---------- */
 .core { padding-top: 56px; }
