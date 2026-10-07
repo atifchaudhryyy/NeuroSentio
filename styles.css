@@ -246,18 +246,40 @@ p, blockquote { text-wrap: pretty; }
 
 .tool-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .tool-card {
-  padding: 26px 24px 28px; border-radius: var(--radius);
-  background: #fff; border: 1px solid var(--line);
+  position: relative; isolation: isolate; overflow: hidden;
+  padding: 28px 24px 28px; border-radius: 18px;
+  background: linear-gradient(160deg, #ffffff 0%, #eef9f6 100%);
+  border: 1px solid #d6ece8;
   box-shadow: 0 1px 2px rgba(20, 50, 58, .04);
-  transition: border-color .2s, box-shadow .2s, transform .2s;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+  --card-a: #0a9d94; --card-b: #5fe0c4;
 }
-.tool-card:hover { border-color: #bfe3dd; box-shadow: 0 16px 32px -22px rgba(11, 74, 80, .4); transform: translateY(-2px); }
-.tool-card h3 { margin: 16px 0 6px; }
+/* Four shades of the brand teal, one per card (harmonious, not rainbow) */
+.tool-card:nth-child(4n + 2) { --card-a: #12876f; --card-b: #6fd6a8; }
+.tool-card:nth-child(4n + 3) { --card-a: #0b5d66; --card-b: #2bb3a8; }
+.tool-card:nth-child(4n + 4) { --card-a: #16a39a; --card-b: #8fe6d2; }
+/* Accent line along the top */
+.tool-card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: linear-gradient(90deg, var(--card-a), var(--card-b) 70%, rgba(126, 232, 192, 0));
+}
+/* Soft dot pattern fading in from the top-right corner */
+.tool-card::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(10, 157, 148, .34) 1.3px, transparent 1.7px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 75% at 100% 0%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 60% 75% at 100% 0%, #000 0%, transparent 70%);
+}
+.tool-card:hover { transform: translateY(-3px); border-color: #b7e0d9; box-shadow: 0 20px 36px -24px rgba(11, 74, 80, .5); }
+.tool-card h3 { margin: 18px 0 6px; }
 .tool-card p { font-size: 0.875rem; color: var(--muted); }
-/* One calm brand style for every card icon: teal on a mint tile */
+/* Icon tiles: rich teal gradient with a white icon */
 .tool-ico {
-  width: 48px; height: 48px; padding: 12px; border-radius: 14px;
-  background: var(--mint); color: var(--teal-dark); stroke-width: 1.8;
+  width: 50px; height: 50px; padding: 13px; border-radius: 15px;
+  background: linear-gradient(140deg, var(--card-a) 0%, var(--card-b) 140%);
+  color: #fff; stroke-width: 1.9;
+  box-shadow: 0 10px 18px -10px var(--card-a), inset 0 1px 0 rgba(255, 255, 255, .25);
 }
 
 /* ---------- Core features / phones ---------- */
