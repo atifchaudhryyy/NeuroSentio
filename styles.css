@@ -987,36 +987,29 @@ p, blockquote { text-wrap: pretty; }
 }
 
 /* =========================================================
-   Home hero: illustrated "mind ring" (replaces the stock photo)
+   Home hero: painted "mind ring" background (images/web/hero-art*.jpg)
    ========================================================= */
-.hero {
-  min-height: 660px;
+.hero { min-height: 640px; background: #08171f; }
+.hero-media img { object-position: 78% 50%; }
+.hero-media::after {
   background:
-    radial-gradient(ellipse 55% 75% at 74% 52%, #1d6468 0%, rgba(29, 100, 104, 0) 70%),
-    linear-gradient(120deg, #0a2629 0%, #0d3236 55%, #114045 100%);
+    linear-gradient(90deg, rgba(6, 20, 28, .6) 0%, rgba(6, 20, 28, .25) 38%, rgba(6, 20, 28, 0) 55%),
+    linear-gradient(0deg, rgba(6, 20, 28, .65) 0%, rgba(6, 20, 28, 0) 26%),
+    linear-gradient(180deg, rgba(6, 20, 28, .5) 0%, rgba(6, 20, 28, 0) 18%);
 }
-.hero-media {
-  left: auto; right: 0; width: 60%;
-  display: flex; align-items: center; justify-content: center;
-  padding: calc(var(--header-h) + 8px) 1.5% 84px 0;
-}
-.hero-media::after { content: none; }
-.hero-art { width: 100%; height: 100%; max-height: 560px; overflow: visible; }
-.hero-copy { max-width: min(520px, 44vw); }
-
-@media (max-width: 600px) {
-  .hero-media {
-    position: relative; inset: auto; width: 100%; z-index: 0;
-    aspect-ratio: auto; max-height: none;
-    padding: calc(var(--header-h) + 4px) 8px 0;
+/* Tablets + phones: artwork on top, text underneath on the same dark colour */
+@media (max-width: 1024px) {
+  .hero { display: block; min-height: 0; background: #08171f; }
+  .hero-media { position: relative; inset: auto; z-index: 0; width: 100%; aspect-ratio: 4 / 3; max-height: 560px; }
+  .hero-media img { object-position: 50% 50%; }
+  .hero-media::after {
+    background:
+      linear-gradient(0deg, #08171f 0%, rgba(8, 23, 31, 0) 30%),
+      linear-gradient(180deg, rgba(6, 20, 28, .55) 0%, rgba(6, 20, 28, 0) 22%);
   }
-  .hero-art { height: auto; max-height: none; }
-  .hero-copy { max-width: none; }
+  .hero-inner { padding-top: 0; gap: 40px; }
 }
-/* Tablets / small laptops: illustration on top, text underneath (side by side doesn't fit) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .hero { display: block; min-height: 0; }
-  .hero-media { position: relative; inset: auto; width: 100%; height: 520px; z-index: 0; padding: calc(var(--header-h) + 8px) 0 0; }
-  .hero-inner { padding-top: 8px; gap: 44px; }
-  .hero-copy { max-width: 620px; }
+@media (max-width: 600px) {
+  .hero-media { aspect-ratio: 4 / 3; max-height: none; }
+  .hero-media img { object-position: 50% 50%; }
 }
