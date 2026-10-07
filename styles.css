@@ -994,7 +994,7 @@ p, blockquote { text-wrap: pretty; }
 .hero-media::after {
   background:
     linear-gradient(90deg, rgba(6, 20, 28, .6) 0%, rgba(6, 20, 28, .25) 38%, rgba(6, 20, 28, 0) 55%),
-    linear-gradient(0deg, rgba(6, 20, 28, .65) 0%, rgba(6, 20, 28, 0) 26%),
+    linear-gradient(0deg, rgba(6, 20, 28, .45) 0%, rgba(6, 20, 28, 0) 18%),
     linear-gradient(180deg, rgba(6, 20, 28, .5) 0%, rgba(6, 20, 28, 0) 18%);
 }
 /* Tablets + phones: artwork on top, text underneath on the same dark colour */
