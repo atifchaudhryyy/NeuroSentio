@@ -1048,3 +1048,84 @@ p, blockquote { text-wrap: pretty; }
   .hero-media picture { position: absolute; inset: 0; }
   .hero-media img { width: 100%; height: 100%; }
 }
+
+/* =========================================================
+   Home hero: LIGHT artwork (heroo.png) - dark text, dark header
+   ========================================================= */
+.site-header.on-light { color: var(--ink); }
+.site-header.on-light .brand-img-light { display: none; }
+.site-header.on-light .brand-img-dark { display: block; }
+.site-header.on-light .brand-mark { color: var(--teal); }
+.site-header.on-light .nav ul a::after { background: var(--teal); }
+
+.hero.hero-light { color: var(--ink); background: #f3faf7; }
+.hero-light h1 { color: var(--ink); }
+.hero-light .hero-lead { color: var(--text); }
+.hero-light .eyebrow-light { color: var(--teal-dark); }
+.hero-light .store { border-color: transparent; box-shadow: 0 10px 22px -14px rgba(11, 40, 44, .55); }
+.hero-light .store:hover { border-color: transparent; }
+.hero-light .trust li { color: var(--ink); }
+.hero-light .trust-ico { background: rgba(255, 255, 255, .85); color: var(--teal-dark); box-shadow: 0 6px 16px -10px rgba(11, 74, 80, .45); backdrop-filter: blur(6px); }
+
+/* Desktop: artwork covers the hero, anchored right; soft light wash behind the text */
+@media (min-width: 1025px) {
+  .hero.hero-light { background: #f3faf7; }
+  .hero-light .hero-media picture { display: block; }
+  .hero-light .hero-media img {
+    width: 100%; height: 100%; max-height: none;
+    object-fit: cover; object-position: 100% 50%;
+    -webkit-mask-image: none; mask-image: none;
+  }
+  .hero-light .hero-media::after {
+    content: "";
+    background:
+      linear-gradient(90deg, rgba(248, 252, 250, .92) 0%, rgba(248, 252, 250, .7) 30%, rgba(248, 252, 250, 0) 50%),
+      linear-gradient(0deg, rgba(248, 252, 250, .75) 0%, rgba(248, 252, 250, 0) 20%);
+  }
+}
+
+/* Tablets + phones: artwork on top (whole picture, no cropping), text underneath */
+@media (max-width: 1024px) {
+  .hero.hero-light { background: #f6fbf8; }
+  .hero-light .hero-media img { object-fit: contain; object-position: 50% 100%; }
+  .hero-light .hero-media::after {
+    content: "";
+    background: linear-gradient(0deg, #f6fbf8 0%, rgba(246, 251, 248, 0) 18%);
+  }
+  .site-header.on-light.menu-open { background: #fff; }
+}
+@media (min-width: 1025px) {
+  .hero.hero-light { background: #f5faf8; }
+  .hero-light .hero-media {
+    left: auto; right: 0; width: min(96%, calc(100% - 300px));
+    display: block; padding: var(--header-h) 0 0;
+  }
+  .hero-light .hero-media picture { display: flex; align-items: center; justify-content: flex-end; width: 100%; height: 100%; }
+  .hero-light .hero-media img {
+    width: 100%; height: auto; max-height: 100%; object-fit: contain; object-position: 100% 50%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%), linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0%, #000 12%), linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .hero-light .hero-media::after { content: none; }
+}
+@media (min-width: 1025px) {
+  .hero-light .hero-media { width: min(100%, calc(100% - 170px)); }
+}
+@media (min-width: 1025px) and (max-width: 1300px) {
+  .hero-light .hero-media { width: calc(100% - 260px); }
+}
+@media (min-width: 1025px) {
+  .hero-light .hero-media { padding-bottom: 104px; }  /* keep the art above the trust row */
+}
+@media (max-width: 1024px) {
+  .hero-light .hero-media img {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 14%);
+  }
+}
+@media (max-width: 1024px) {
+  .hero-light .hero-media picture { display: flex; align-items: flex-end; justify-content: center; }
+  .hero-light .hero-media img { width: 100%; height: auto; max-height: 100%; object-fit: contain; }
+}
