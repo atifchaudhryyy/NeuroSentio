@@ -1013,3 +1013,38 @@ p, blockquote { text-wrap: pretty; }
   .hero-media { aspect-ratio: 4 / 3; max-height: none; }
   .hero-media img { object-position: 50% 50%; }
 }
+
+/* Hero fills the whole screen (svh = visible height on phones, vh as fallback) */
+.hero { min-height: 100vh; min-height: 100svh; }
+@media (max-width: 1024px) {
+  .hero { display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; }
+  .hero-media { flex: none; }
+  .hero-inner { flex: 1; justify-content: space-between; }
+}
+/* Full-height hero on laptops: show the whole artwork on the right instead of zooming it in */
+@media (min-width: 1025px) {
+  .hero-media img { object-fit: contain; object-position: 100% 50%; }
+}
+@media (min-width: 1025px) {
+  .hero { background: #031018; }  /* same colour as the artwork's edges */
+  .hero-media img {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  }
+}
+@media (min-width: 1025px) {
+  /* size the picture to the artwork itself so the edge fade lands on the image edges */
+  .hero-media picture { display: flex; align-items: center; justify-content: flex-end; }
+  .hero-media img { width: 100%; height: auto; max-height: 100%; }
+}
+/* Phones/tablets: the artwork takes whatever height is left, so there's no empty gap */
+@media (max-width: 1024px) {
+  .hero-media { flex: 1 1 auto; aspect-ratio: auto; min-height: 260px; max-height: none; }
+  .hero-media picture, .hero-media img { height: 100%; }
+  .hero-media img { object-fit: cover; object-position: 50% 45%; }
+  .hero-inner { flex: none; gap: 32px; }
+}
+@media (max-width: 1024px) {
+  .hero-media picture { position: absolute; inset: 0; }
+  .hero-media img { width: 100%; height: 100%; }
+}
