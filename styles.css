@@ -1815,3 +1815,19 @@ p, blockquote { text-wrap: pretty; }
 .mind-hero h1 { max-width: 22ch; font-size: clamp(2.45rem, 1.3rem + 3.1vw, 4.1rem); }
 .mind-hero-lead { max-width: 60ch; }
 @media (max-width: 600px) { .mind-hero h1 { font-size: 2.3rem; } }
+/* Hero v4: show the phones in full (no cropping); hero grows to fit them */
+.mind-hero { min-height: 0; }
+.mind-hero-phones { flex: none; min-height: 0; margin-top: 8px; }
+.mind-hero-phones picture { position: static; display: block; }
+.mind-hero-phones img {
+  display: block; width: 100%; max-width: 1640px; height: auto; margin-inline: auto;
+  object-fit: initial;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%), linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 14%), linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-composite: intersect;
+}
+@media (min-width: 1700px) { .mind-hero-phones img { object-position: initial; } }
+@media (max-width: 1024px) {
+  .mind-hero-phones img { -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); }
+}
