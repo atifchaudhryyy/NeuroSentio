@@ -1653,3 +1653,17 @@ p, blockquote { text-wrap: pretty; }
 }
 .values-cards .why-card:hover .value-num { opacity: .3; transform: translateY(-3px); }
 .about-cta { padding-top: 24px; }
+/* Features toolkit tags: darker text so every tag passes contrast */
+.fcard { --t: #076e69; }
+.fcard:nth-child(8n + 2) { --t: #8a4b00; }
+.fcard:nth-child(8n + 3) { --t: #1d5591; }
+.fcard:nth-child(8n + 4) { --t: #553aa8; }
+.fcard:nth-child(8n + 5) { --t: #0b5d66; }
+.fcard:nth-child(8n + 6) { --t: #0b6352; }
+.fcard:nth-child(8n + 7) { --t: #95334f; }
+.fcard:nth-child(8n + 8) { --t: #076e69; }
+.fcard-tag { color: var(--t); }
+@media (max-width: 600px) {
+  .why-card { text-align: center; }
+  .why-card .why-ico { margin-inline: auto; }
+}
