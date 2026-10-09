@@ -1831,3 +1831,22 @@ p, blockquote { text-wrap: pretty; }
 @media (max-width: 1024px) {
   .mind-hero-phones img { -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); }
 }
+/* Hero v4: everything fits in one screen, phones scaled to the space under the buttons */
+.mind-hero { height: 100vh; height: 100svh; min-height: 620px; max-height: 1400px; }
+.mind-hero h1 { font-size: clamp(2.3rem, 1.2rem + 2.7vw, 3.7rem); margin-bottom: 14px; }
+.mind-hero .app-hero-badge { margin-bottom: 14px; }
+.mind-hero-lead { margin-bottom: 22px; }
+.mind-hero-stores { margin-bottom: 14px; }
+.mind-hero-phones { flex: 1 1 0; min-height: 180px; margin-top: 10px; position: relative; }
+.mind-hero-phones picture { position: absolute; inset: 0; display: flex; justify-content: center; align-items: flex-end; }
+.mind-hero-phones img {
+  width: auto; height: 100%; max-width: 100%; object-fit: contain; object-position: 50% 100%; margin: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%), linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 12%), linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  mask-composite: intersect;
+}
+@media (max-width: 1024px) {
+  .mind-hero-phones img { width: 100%; height: auto; max-height: 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); }
+}
+@media (max-width: 600px) { .mind-hero { min-height: 640px; } }
