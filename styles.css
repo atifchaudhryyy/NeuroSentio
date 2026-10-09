@@ -1787,3 +1787,24 @@ p, blockquote { text-wrap: pretty; }
 .mind-hero-phones { margin-top: 0; }
 .mind-hero-phones img { object-position: 50% 28%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%); mask-image: linear-gradient(to bottom, transparent 0%, #000 12%); }
 
+/* Hero v4: store badges + trust line */
+.mind-hero-stores { justify-content: center; margin-bottom: 18px; }
+.mind-hero .store { border-color: transparent; padding: 10px 22px 10px 16px; box-shadow: 0 14px 26px -14px rgba(11, 40, 44, .65); }
+.mind-hero .store-ico { width: 30px; height: 30px; }
+.mind-hero .store strong { font-size: 1.25rem; }
+.mind-hero-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; color: var(--muted); font-size: .9rem; font-weight: 500; }
+.mind-hero-trust span { display: inline-flex; align-items: center; gap: 7px; }
+.mind-hero-trust span::before {
+  content: ""; width: 16px; height: 16px; border-radius: 50%; flex: none;
+  background: var(--teal-dark) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 10px no-repeat;
+}
+.mind-hero-copy > :nth-child(3) { animation-delay: .2s; }
+.mind-hero-copy > :nth-child(4) { animation-delay: .3s; }
+@media (max-width: 600px) {
+  .mind-hero .store-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; max-width: 360px; }
+  .mind-hero .store { padding: 8px 10px; justify-content: center; }
+  .mind-hero .store strong { font-size: 1.05rem; }
+  .mind-hero .store-ico { width: 26px; height: 26px; }
+  .mind-hero-trust { font-size: .82rem; gap: 6px 12px; }
+}
+@media (max-width: 380px) { .mind-hero .store-row { grid-template-columns: 1fr; } }
