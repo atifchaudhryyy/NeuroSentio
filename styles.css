@@ -1129,3 +1129,159 @@ p, blockquote { text-wrap: pretty; }
   .hero-light .hero-media picture { display: flex; align-items: flex-end; justify-content: center; }
   .hero-light .hero-media img { width: 100%; height: auto; max-height: 100%; object-fit: contain; }
 }
+
+/* =========================================================
+   App-screen pairs (replace the logo images in "A Closer Look")
+   ========================================================= */
+.panel-media.screens {
+  position: relative; isolation: isolate; overflow: hidden;
+  aspect-ratio: 4 / 3; display: block;
+  background: linear-gradient(150deg, #eaf8f5 0%, #d8f0ea 100%);
+}
+.panel-media.screens::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background-image: radial-gradient(circle, rgba(10, 157, 148, .28) 1.3px, transparent 1.7px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 0% 100%, #000, transparent 72%);
+  mask-image: radial-gradient(ellipse 70% 70% at 0% 100%, #000, transparent 72%);
+}
+.screens-blob {
+  position: absolute; z-index: -1; width: 62%; aspect-ratio: 1; border-radius: 50%;
+  left: 50%; top: 54%; transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 25%, #8ff0d6 0%, #2bb3a8 50%, #0a8a83 100%);
+  opacity: .9;
+}
+.panel-media.screens .phone { position: absolute; width: 34%; max-width: none; padding: 5px; }
+.panel-media.screens .phone img { aspect-ratio: 720 / 1520; height: auto; width: 100%; }
+.screens-back  { left: 18%; top: 14%; transform: rotate(-8deg); opacity: .96; }
+.screens-front { right: 18%; top: 22%; transform: rotate(6deg); }
+.panel-media.screens .phone { transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.panel:hover .screens-back  { transform: rotate(-11deg) translate(-8px, -6px); }
+.panel:hover .screens-front { transform: rotate(9deg) translate(8px, -10px); }
+
+/* Features hero: three phones fanned out */
+.fan { position: relative; isolation: isolate; height: 520px; display: flex; justify-content: center; align-items: flex-end; }
+.fan-glow {
+  position: absolute; z-index: -1; width: min(440px, 90%); aspect-ratio: 1; border-radius: 50%;
+  left: 50%; top: 48%; transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 25%, #8ff0d6 0%, #2bb3a8 48%, #0a8a83 100%);
+  box-shadow: 0 40px 80px -40px rgba(11, 74, 80, .6);
+}
+.fan .phone { position: absolute; bottom: 24px; width: 34%; max-width: 230px; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.fan .phone img { aspect-ratio: 720 / 1520; height: auto; }
+.fan-center { z-index: 2; bottom: 10px !important; width: 38% !important; max-width: 250px !important; }
+.fan-left  { left: 8%;  transform: rotate(-10deg); }
+.fan-right { right: 8%; transform: rotate(10deg); }
+.fan:hover .fan-left  { transform: rotate(-14deg) translateX(-14px); }
+.fan:hover .fan-right { transform: rotate(14deg) translateX(14px); }
+.fan:hover .fan-center { transform: translateY(-10px); }
+@media (max-width: 600px) {
+  .fan { height: 400px; }
+  .fan-left { left: 2%; } .fan-right { right: 2%; }
+}
+
+/* =========================================================
+   Feature ticker (home, under the hero)
+   ========================================================= */
+.ticker { overflow: hidden; background: var(--teal-dark); color: #fff; padding: 16px 0; }
+.ticker-track { display: flex; width: max-content; gap: 48px; animation: ticker 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-item { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; font-size: 0.95rem; white-space: nowrap; letter-spacing: .01em; }
+.ticker-item .icon { width: 20px; height: 20px; color: #8ff0d6; }
+.ticker-item::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #f5a01e; margin-left: 36px; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* =========================================================
+   Motion: scroll reveals (added by script.js) + hero entrance
+   ========================================================= */
+.js-anim .reveal {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity .75s ease, transform .75s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.js-anim .reveal.reveal-zoom { transform: translateY(18px) scale(.96); }
+.js-anim .reveal.in { opacity: 1; transform: none; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+.hero-copy > * { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-copy > *:nth-child(1) { animation-delay: .05s; }
+.hero-copy > *:nth-child(2) { animation-delay: .15s; }
+.hero-copy > *:nth-child(3) { animation-delay: .28s; }
+.hero-copy > *:nth-child(4) { animation-delay: .4s; }
+.hero .trust li { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
+.hero .trust li:nth-child(1) { animation-delay: .55s; }
+.hero .trust li:nth-child(2) { animation-delay: .65s; }
+.hero .trust li:nth-child(3) { animation-delay: .75s; }
+.hero-media img { animation: fade-in 1.3s ease both; }
+.ph-copy > *, .contact-intro .container > *, .legal-intro .container > * { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
+.ph-copy > *:nth-child(2), .contact-intro .container > *:nth-child(2), .legal-intro .container > *:nth-child(2) { animation-delay: .12s; }
+.ph-copy > *:nth-child(3), .contact-intro .container > *:nth-child(3), .legal-intro .container > *:nth-child(3) { animation-delay: .24s; }
+.ph-copy > *:nth-child(4), .legal-intro .container > *:nth-child(4) { animation-delay: .36s; }
+
+/* Gentle float for decorative screens */
+@keyframes float-y { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+.screens-front, .fan-center, .showcase-phone { animation: float-y 7s ease-in-out infinite; }
+.screens-back { animation: float-y 7s ease-in-out -3.5s infinite; }
+
+/* =========================================================
+   Hover effects
+   ========================================================= */
+.btn { transition: background-color .2s, color .2s, border-color .2s, transform .25s, box-shadow .25s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -14px rgba(7, 101, 96, .7); }
+.btn .icon { transition: transform .25s; }
+.btn:hover .icon { transform: translateX(4px); }
+.btn:active { transform: translateY(0); }
+
+.disc { transition: background-color .3s, color .3s, transform .4s cubic-bezier(.3, 1.5, .5, 1); }
+.why-grid li, .values-grid li, .feature-grid li { transition: transform .3s; }
+.why-grid li:hover .disc, .values-grid li:hover .disc, .feature-grid li:hover .disc {
+  background: var(--teal-dark); color: #fff; transform: translateY(-4px) rotate(-6deg);
+}
+.why-grid li:hover h3, .values-grid li:hover h3, .feature-grid li:hover h3 { color: var(--teal-dark); }
+
+.phone-item .phone { transition: transform .45s cubic-bezier(.2, .7, .2, 1), box-shadow .45s; }
+.phone-item:hover .phone { transform: translateY(-8px) rotate(-1.5deg); box-shadow: 0 30px 50px -24px rgba(11, 40, 44, .55); }
+.phone-item h3 { transition: color .2s; }
+.phone-item:hover h3 { color: var(--teal-dark); }
+
+.about-media, .panel-media, .life-media { overflow: hidden; }
+.about-media img, .panel-media > img, .life-media img, .ph-media img { transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+.about-media:hover img, .panel-media:hover > img, .life-media:hover img, .ph-media:hover img { transform: scale(1.04); }
+
+.t-card { transition: transform .3s, border-color .3s, box-shadow .3s; }
+.t-card:hover { transform: translateY(-4px); border-color: #bfe3dd; box-shadow: 0 22px 40px -26px rgba(11, 74, 80, .45); }
+.qmark { transition: transform .4s; }
+.t-card:hover .qmark { transform: scale(1.15) rotate(-6deg); }
+
+.mission-card li, .info-list li { transition: transform .3s; }
+.mission-card li:hover, .info-list li:hover { transform: translateX(4px); }
+.mission-ico, .info-ico { transition: background-color .3s, color .3s, transform .4s cubic-bezier(.3, 1.5, .5, 1); }
+.mission-card li:hover .mission-ico, .info-list li:hover .info-ico { background: var(--teal-dark); color: #fff; transform: scale(1.08) rotate(-6deg); }
+
+.faq summary::after { transition: transform .25s, background-color .25s; }
+.faq:hover { border-color: #bfe3dd; }
+.faq:hover summary::after { background-color: #d2f0ea; }
+
+.footer-col li a { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: color .2s, background-size .3s; }
+.footer-col li a:hover { background-size: 100% 1px; }
+
+.app-icon img { transition: transform .5s cubic-bezier(.3, 1.4, .5, 1); }
+.download-box:hover .app-icon img { transform: rotate(-6deg) scale(1.05); }
+
+.contact-card { transition: box-shadow .3s, border-color .3s; }
+.contact-card:hover { border-color: #c7e6e0; box-shadow: 0 24px 50px -34px rgba(11, 74, 80, .45); }
+
+/* Respect people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-copy > *, .hero .trust li, .hero-media img, .ph-copy > *, .contact-intro .container > *, .legal-intro .container > *,
+  .screens-front, .screens-back, .fan-center, .showcase-phone, .ticker-track { animation: none; }
+  .btn:hover, .t-card:hover, .phone-item:hover .phone { transform: none; }
+}
+.fan-glow { width: min(520px, 96%); top: 54%; }
+.fan .phone { width: 29%; max-width: 205px; }
+.fan-center { width: 33% !important; max-width: 228px !important; }
+.fan-left { left: 12%; } .fan-right { right: 12%; }
+@media (max-width: 600px) { .fan-left { left: 4%; } .fan-right { right: 4%; } }
+@media (max-width: 600px) { .fan { height: 360px; } .fan-glow { top: 50%; } }

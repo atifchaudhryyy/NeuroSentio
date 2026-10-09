@@ -135,6 +135,27 @@
     });
   }
 
+  // Scroll reveals: sections fade up as they come into view (skipped for reduced-motion users)
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!calm && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("js-anim");
+    const blocks = ".section-head, .t-head, .tools-copy, .about-copy, .mission-copy, .panel-copy, .approach-copy, .download-box, .contact-card, .faq-group > h2, .legal-content > h2, .faq-cta";
+    const media = ".about-media, .panel-media, .life-media, .showcase, .fan, .mission-card";
+    const groups = ".why-grid, .tool-cards, .phone-grid, .values-grid, .feature-grid, .t-track, .info-list, .faq-group";
+    const targets = [];
+    document.querySelectorAll(blocks).forEach((el) => { el.classList.add("reveal"); targets.push(el); });
+    document.querySelectorAll(media).forEach((el) => { el.classList.add("reveal", "reveal-zoom"); targets.push(el); });
+    document.querySelectorAll(groups).forEach((g) => {
+      [...g.children].filter((c) => c.matches("li, details")).forEach((c, i) => {
+        c.classList.add("reveal"); c.style.setProperty("--d", Math.min(i, 7) * 90 + "ms"); targets.push(c);
+      });
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    targets.forEach((el) => io.observe(el));
+  }
+
   // Footer year
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
