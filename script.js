@@ -139,9 +139,9 @@
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!calm && "IntersectionObserver" in window) {
     document.documentElement.classList.add("js-anim");
-    const blocks = ".section-head, .t-head, .tools-copy, .about-copy, .mission-copy, .panel-copy, .approach-copy, .download-box, .contact-card, .faq-group > h2, .legal-content > h2, .faq-cta";
-    const media = ".about-media, .panel-media, .life-media, .showcase, .fan, .mission-card";
-    const groups = ".why-grid, .tool-cards, .phone-grid, .values-grid, .feature-grid, .t-track, .info-list, .faq-group";
+    const blocks = ".section-head, .t-head, .story-copy, .home-faq-head, .tools-copy, .about-copy, .mission-copy, .panel-copy, .approach-copy, .download-box, .contact-card, .faq-group > h2, .legal-content > h2, .faq-cta";
+    const media = ".about-media, .panel-media, .life-media, .showcase, .fan, .mission-card, .story-media";
+    const groups = ".why-grid, .why-cards, .tool-cards, .fcards, .phone-grid, .values-grid, .feature-grid, .t-track, .info-list, .faq-group, .home-faq-list";
     const targets = [];
     document.querySelectorAll(blocks).forEach((el) => { el.classList.add("reveal"); targets.push(el); });
     document.querySelectorAll(media).forEach((el) => { el.classList.add("reveal", "reveal-zoom"); targets.push(el); });
