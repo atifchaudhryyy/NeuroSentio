@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=202610092052" />
+  <link rel="stylesheet" href="styles.css?v=202610092105" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"NeuroSentio","url":"https://neurosentio.com/","logo":"https://neurosentio.com/images/web/app-icon.png","email":"contact.neurosentio@gmail.com","sameAs":["https://www.linkedin.com/company/neurosentio-ltd/","https://www.instagram.com/neurosentio/","https://apps.apple.com/gb/app/neurosentio/id6758456795","https://play.google.com/store/apps/details?id=com.neurosentio.app"],"@id":"https://neurosentio.com/#organization"},{"@type":"WebSite","@id":"https://neurosentio.com/#website","url":"https://neurosentio.com/","name":"NeuroSentio","inLanguage":"en-GB","publisher":{"@id":"https://neurosentio.com/#organization"}},{"@type":"MobileApplication","name":"NeuroSentio","description":"A workplace support app for neurodivergent people, combining Safe Mode and trusted contact alerts, energy check-ins and insights, a planner with reminders, an AI voice assistant and Neuro Cards for sharing communication preferences.","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","image":"https://neurosentio.com/images/web/app-icon.png","screenshot":["https://neurosentio.com/images/AIAssistant.webp","https://neurosentio.com/images/EnergyCheckIn.webp","https://neurosentio.com/images/NeuroCard.jpg","https://neurosentio.com/images/SafeMode.jpg"],"installUrl":["https://apps.apple.com/gb/app/neurosentio/id6758456795","https://play.google.com/store/apps/details?id=com.neurosentio.app"],"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"publisher":{"@id":"https://neurosentio.com/#organization"},"url":"https://neurosentio.com/"}]}</script>
 </head>
 <body data-page="home">
@@ -98,46 +98,30 @@
   <main id="main">
 
     <!-- ========== Hero ========== -->
-    <section class="hero hero-light" id="home">
-      <div class="hero-media" aria-hidden="true">
-        <picture>
-          <source media="(max-width: 1024px)" srcset="images/web/hero-light-mobile.jpg" width="1200" height="794" />
-          <img src="images/web/hero-light.jpg" width="1942" height="809" alt="" fetchpriority="high" decoding="async" />
-        </picture>
+    <section class="app-hero" id="home" aria-labelledby="heroTitle">
+      <span class="app-hero-glow" aria-hidden="true"></span>
+      <div class="container app-hero-copy">
+        <p class="app-hero-badge"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>Free on iPhone and Android</p>
+        <h1 id="heroTitle">A calmer workday, built for neurodivergent minds</h1>
+        <p class="app-hero-lead">NeuroSentio is an AI-powered app that helps you plan, pace your energy and share your needs, so work feels more supported and more like you.</p>
+        <div class="store-row">
+          <a class="store" href="https://apps.apple.com/gb/app/neurosentio/id6758456795" target="_blank" rel="noopener" aria-label="Download NeuroSentio on the App Store (opens in a new tab)">
+            <svg class="store-ico" aria-hidden="true"><use href="#i-apple"/></svg>
+            <span><small>Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.neurosentio.app" target="_blank" rel="noopener" aria-label="Get NeuroSentio on Google Play (opens in a new tab)">
+            <svg class="store-ico" aria-hidden="true"><use href="#i-play"/></svg>
+            <span><small>GET IT ON</small><strong>Google Play</strong></span>
+          </a>
+        </div>
       </div>
 
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow eyebrow-light">A calmer workday is possible</p>
-          <h1>Discover NeuroSentio</h1>
-          <p class="hero-lead">An AI-powered app to help neurodivergent people feel more supported, focused and in control at work.</p>
-
-          <div class="store-row">
-            <a class="store" href="https://apps.apple.com/gb/app/neurosentio/id6758456795" target="_blank" rel="noopener" aria-label="Download NeuroSentio on the App Store (opens in a new tab)">
-              <svg class="store-ico" aria-hidden="true"><use href="#i-apple"/></svg>
-              <span><small>Download on the</small><strong>App Store</strong></span>
-            </a>
-            <a class="store" href="https://play.google.com/store/apps/details?id=com.neurosentio.app" target="_blank" rel="noopener" aria-label="Get NeuroSentio on Google Play (opens in a new tab)">
-              <svg class="store-ico" aria-hidden="true"><use href="#i-play"/></svg>
-              <span><small>GET IT ON</small><strong>Google Play</strong></span>
-            </a>
-          </div>
-        </div>
-
-        <ul class="trust">
-          <li>
-            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></span>
-            <span>Designed for<br />neurodivergent minds</span>
-          </li>
-          <li>
-            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
-            <span>Private, secure<br />and in your control</span>
-          </li>
-          <li>
-            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
-            <span>Real support<br />for real workdays</span>
-          </li>
-        </ul>
+      <div class="hero-phones">
+        <div class="hp hp-1"><div class="phone"><img src="images/NeuroCard.jpg" width="720" height="1600" alt="Neuro Card screen" /></div></div>
+        <div class="hp hp-2"><div class="phone"><img src="images/AIAssistant.webp" width="720" height="1600" alt="AI Assistant screen in dark mode" class="is-dark" /></div></div>
+        <div class="hp hp-3"><div class="phone"><img src="images/SafeMode.jpg" width="720" height="1600" alt="Safe Mode breathing timer in dark mode" class="is-dark" fetchpriority="high" /></div></div>
+        <div class="hp hp-4"><div class="phone"><img src="images/EnergyCheckIn.webp" width="720" height="1600" alt="Energy Check-in screen" /></div></div>
+        <div class="hp hp-5"><div class="phone"><img src="images/NeuroCard.jpg" width="720" height="1600" alt="Neuro Card screen in dark mode" class="is-dark" /></div></div>
       </div>
     </section>
     <!-- ========== Feature ticker ========== -->
@@ -277,16 +261,23 @@
     </section>
 
     <!-- ========== About ========== -->
-    <section class="section about" id="about">
-      <div class="container about-grid">
-        <div class="about-media">
-          <img src="images/about.webp" width="1672" height="941" alt="Two colleagues smiling while working together at a laptop in a bright, plant-filled office" onerror="this.remove()" />
+    <section class="section about-intro" id="about" aria-labelledby="homeAboutTitle">
+      <div class="container ph-grid">
+        <div class="ph-copy">
+          <p class="eyebrow">About NeuroSentio</p>
+          <h2 id="homeAboutTitle">A more inclusive tomorrow</h2>
+          <p class="lead">We built NeuroSentio to make work feel calmer and easier to manage for neurodivergent people, with tools that adapt to how you think and support that understands what works for you.</p>
+          <a class="btn btn-solid btn-lg" href="about.html#mission">Our Mission <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <div class="about-copy">
-          <p class="eyebrow eyebrow-muted">About NeuroSentio</p>
-          <h2>A more inclusive tomorrow</h2>
-          <p>We believe neurodivergent people deserve workplaces that understand and support them. NeuroSentio was created to make everyday work life calmer and more inclusive, with practical tools for planning, communication, energy awareness and moments of overwhelm.</p>
-          <a class="btn btn-outline" href="about.html#mission">Learn more about our mission <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+
+        <div class="showcase">
+          <span class="showcase-circle" aria-hidden="true"></span>
+          <div class="phone showcase-phone">
+            <img src="images/AIAssistant.webp" width="720" height="1600" alt="The NeuroSentio app’s AI Assistant screen, offering to plan your day, break down a task, help you reply and understand your patterns" />
+          </div>
+          <span class="chip chip-1" aria-hidden="true"><span class="chip-ico"><svg class="icon"><use href="#i-bolt"/></svg></span>Energy check-in <b>✓</b></span>
+          <span class="chip chip-2" aria-hidden="true"><span class="chip-ico"><svg class="icon"><use href="#i-card"/></svg></span>Neuro Card shared</span>
+          <span class="chip chip-3" aria-hidden="true"><span class="chip-ico"><svg class="icon"><use href="#i-leaf"/></svg></span>Calm mode on</span>
         </div>
       </div>
     </section>
@@ -412,6 +403,6 @@
       <p>© <span id="year">2026</span> NeuroSentio. All rights reserved.</p>    </div>
   </footer>
 
-  <script src="script.js?v=202610092052"></script>
+  <script src="script.js?v=202610092105"></script>
 </body>
 </html>
