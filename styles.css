@@ -1642,3 +1642,14 @@ p, blockquote { text-wrap: pretty; }
   .story-chip { animation: none; }
   .story:hover .story-media .phone, .why-card:hover, .fcard:hover { transform: none; }
 }
+
+/* About: values cards (reuse the home principle cards) */
+.values .section-head.center .lead { margin-inline: auto; }
+.values-cards .why-card { padding-top: 34px; }
+.value-num {
+  position: absolute; top: 20px; right: 22px;
+  font-family: var(--serif); font-size: 2.4rem; font-weight: 600; line-height: 1;
+  color: var(--c1); opacity: .14; transition: opacity .35s, transform .35s;
+}
+.values-cards .why-card:hover .value-num { opacity: .3; transform: translateY(-3px); }
+.about-cta { padding-top: 24px; }
