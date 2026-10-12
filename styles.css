@@ -1850,3 +1850,23 @@ p, blockquote { text-wrap: pretty; }
   .mind-hero-phones img { width: 100%; height: auto; max-height: 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%); }
 }
 @media (max-width: 600px) { .mind-hero { min-height: 640px; } }
+/* Hero v5 (Tiimo-style): big, wide phone row under compact copy; phones run past the fold */
+.mind-hero { height: auto; min-height: 0; max-height: none; padding-bottom: 0; }
+.mind-hero-phones { flex: none; min-height: 0; margin-top: 26px; position: relative; }
+.mind-hero-phones picture { position: static; display: block; }
+.mind-hero-phones img {
+  display: block; width: min(1520px, 96vw); height: auto; max-width: none; max-height: none; margin: 0 auto;
+  object-fit: initial; object-position: initial;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%), linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 10%), linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  mask-composite: intersect;
+}
+.mind-hero-phones::after { /* soft fade into the next section */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%); pointer-events: none;
+}
+@media (max-width: 1024px) {
+  .mind-hero-phones img { width: 100%; max-width: 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%); mask-image: linear-gradient(to bottom, transparent 0%, #000 12%); }
+  .mind-hero-phones::after { height: 60px; }
+}
