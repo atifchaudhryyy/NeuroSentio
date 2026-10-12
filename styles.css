@@ -1870,3 +1870,4 @@ p, blockquote { text-wrap: pretty; }
   .mind-hero-phones img { width: 100%; max-width: 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%); mask-image: linear-gradient(to bottom, transparent 0%, #000 12%); }
   .mind-hero-phones::after { height: 60px; }
 }
+.about-intro .panel-media.needs { min-height: 440px; border-radius: 24px; }
